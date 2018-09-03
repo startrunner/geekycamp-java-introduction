@@ -1,11 +1,13 @@
 package exposed.source.geekycamp5.cowsnbulls.contract;
 
 public class GameRules {
-    public final int digitCount;
+    public final String alphabet;
+    public final int textLength;
     public final int maxRetryCount;
 
-    public GameRules(int digitCount, int maxRetryCount) {
-        this.digitCount = digitCount;
+    public GameRules(String alphabet, int textLength, int maxRetryCount) {
+        this.alphabet = alphabet;
+        this.textLength = textLength;
         this.maxRetryCount = maxRetryCount;
     }
 }

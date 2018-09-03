@@ -8,4 +8,8 @@ public class ChallengerResponse {
 
     public final int cows;
     public final  int bulls;
+
+    public @Override String toString(){
+        return String.format("(cows: %d   bulls: %d)", cows, bulls);
+    }
 }

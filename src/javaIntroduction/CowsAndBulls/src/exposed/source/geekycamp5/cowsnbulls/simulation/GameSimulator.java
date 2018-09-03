@@ -15,11 +15,12 @@ public class GameSimulator {
         List<GameTurn> turns=new ArrayList<>();
 
         for(int turn=1;turn<=rules.maxRetryCount;turn++){
-            int guess = player.makeGuess();
+            String guess = player.makeGuess();
             ChallengerResponse response = challenger.gradeGuess(guess);
+            player.receiveChallengerResponse(response);
             turns.add(new GameTurn(guess, response));
 
-            boolean playerWins = response.bulls == rules.digitCount;
+            boolean playerWins = response.bulls == rules.textLength;
             if(playerWins) {
                 return new GameSummary(
                     rules,
