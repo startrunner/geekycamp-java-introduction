@@ -11,17 +11,17 @@ import java.util.List;
 public class GameSimulator {
     public static final GameSimulator Instance = new GameSimulator();
 
-    public GameSummary SimulateGame(GameRules rules, Challenger challenger, Player player){
-        List<GameTurn> turns=new ArrayList<>();
+    public GameSummary SimulateGame(GameRules rules, Challenger challenger, Player player) {
+        List<GameTurn> turns = new ArrayList<>();
 
-        for(int turn=1;turn<=rules.maxRetryCount;turn++){
+        for (int turn = 1; turn <= rules.maxRetryCount; turn++) {
             String guess = player.makeGuess();
             ChallengerResponse response = challenger.gradeGuess(guess);
             player.receiveChallengerResponse(response);
             turns.add(new GameTurn(guess, response));
 
             boolean playerWins = response.bulls == rules.textLength;
-            if(playerWins) {
+            if (playerWins) {
                 return new GameSummary(
                     rules,
                     GameResult.PLAYER_WINS,

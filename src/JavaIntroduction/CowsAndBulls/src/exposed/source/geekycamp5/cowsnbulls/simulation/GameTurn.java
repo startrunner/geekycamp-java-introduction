@@ -11,7 +11,8 @@ public class GameTurn {
         this.challengerResponse = challengerResponse;
     }
 
-    @Override public String toString(){
+    @Override
+    public String toString() {
         return String.format("Player Guess: %s    Challenger Response: %s", playerGuess, challengerResponse.toString());
     }
 }

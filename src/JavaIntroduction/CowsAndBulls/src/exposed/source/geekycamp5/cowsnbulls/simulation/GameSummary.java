@@ -18,13 +18,16 @@ public class GameSummary implements Iterable<GameTurn> {
     }
 
     @Override
-    public Iterator<GameTurn> iterator() { return turns.iterator(); }
+    public Iterator<GameTurn> iterator() {
+        return turns.iterator();
+    }
 
-    @Override public String toString(){
+    @Override
+    public String toString() {
         StringBuilder builder = new StringBuilder();
 
-        for(GameTurn turn : this){
-            builder.append(turn.toString()+"\n");
+        for (GameTurn turn : this) {
+            builder.append(turn.toString() + "\n");
         }
 
         builder.append(String.format("Game summary: %d turns with status %s\n", turns.size(), result.toString()));
