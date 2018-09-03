@@ -80,6 +80,7 @@ public class StupidPlayer implements Player {
         List<Character> chars =  notExcludedCharacters.stream().collect(Collectors.toList());
 
         for(;;){
+            int x;
             StringBuilder builder = new StringBuilder();
             for(int i = 0; i<rules.textLength; i++)builder.append(chars.get(i));
             String guess = builder.toString();
